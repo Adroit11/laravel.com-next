@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <title>{{ isset($title) ? $title . ' - ' : null }}Laravel - The PHP Framework For Web Artisans</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon.png">
@@ -24,8 +24,7 @@
     <link rel="stylesheet" type="text/css" href="{{ mix('css/app.css') }}">
 
     <!-- Load JS -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
 
 </head>
 <body class="language-php">
@@ -40,7 +39,11 @@
                     <h2>Become a Laravel Partner</h2>
                     <p>Laravel Partners are elite shops providing top-notch Laravel development and consulting. Each of our partners can help you craft a beautiful, well-architected project.</p>
                 </div>
+                @if(request()->is('partners'))
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSeOTE1G6zxSPbKdmQ59UKkL_Rja_ddAyG6Y6xxGdSGAWlNTFA/viewform?usp=sf_link" class="btn"><span>Become A Partner</span></a>
+                @else
                 <a href="/partners" class="btn"><span>Our Partners</span></a>
+                @endif
             </section>
         </div>
 
@@ -80,6 +83,8 @@
                                     <li><a href="https://laracasts.com">Laracasts</a></li>
                                     <li><a href="https://laravel-news.com">Laravel News</a></li>
                                     <li><a href="https://laracon.us">Laracon</a></li>
+                                    <li><a href="https://laracon.eu/">Laracon EU</a></li>
+                                    <li><a href="https://laracon.com.au/">Laracon AU</a></li>
                                     <li><a href="https://larajobs.com">Jobs</a></li>
                                     <li><a href="https://certification.laravel.com/">Certification</a></li>
                                     <li><a href="https://laracasts.com/discuss">Forums</a></li>
@@ -103,8 +108,8 @@
                                     <li><a href="https://cubettech.com/">Cubet</a></li>
                                     <li><a href="https://devsquad.com/">DevSquad</a></li>
                                     <li><a href="https://www.ideil.com/">Ideil</a></li>
-                                    <li><a href="https://www.cyber-duck.co.uk/how-we-work/technology/laravel?utm_source=Laravel%20Partner&utm_medium=Sponsorship">Cyber-duck</a></li>
-                                    <li><a href="https://corporate.aboutyou.de/app/uploads/2019/07/INTRO-Pitch-I-AY-Tech.pdf?utm_source=laravelpartnersfindoutmore&utm_medium=socialgroups&utm_campaign=tech">ABOUT YOU</a></li>
+                                    <li><a href="https://www.cyber-duck.co.uk/how-we-work/technology/laravel?utm_source=Laravel%20Partner&utm_medium=Sponsorship">Cyber-Duck</a></li>
+                                    <li><a href="https://corporate.aboutyou.de/app/uploads/2019/08/INTRO-Pitch-I-AY-Tech.pdf?utm_source=laravelpartnersfindoutmore&utm_medium=socialgroups&utm_campaign=tech">ABOUT YOU</a></li>
                                     <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSeOTE1G6zxSPbKdmQ59UKkL_Rja_ddAyG6Y6xxGdSGAWlNTFA/viewform">Become A Partner</a></li>
                                 </ul>
                             </div>
@@ -116,7 +121,7 @@
                                     <li><a href="https://vapor.laravel.com">Vapor</a></li>
                                     <li><a href="https://forge.laravel.com">Forge</a></li>
                                     <li><a href="https://envoyer.io">Envoyer</a></li>
-                                    <li><a href="https://horizon.laravel.com">Horizon</a></li>
+                                    <li><a href="/docs/{{DEFAULT_VERSION}}/horizon">Horizon</a></li>
                                     <li><a href="https://lumen.laravel.com">Lumen</a></li>
                                     <li><a href="https://nova.laravel.com">Nova</a></li>
                                     <li><a href="/docs/{{DEFAULT_VERSION}}/broadcasting">Echo</a></li>
@@ -143,7 +148,7 @@
                             </li>
                             <li><a href="https://github.com/laravel"><img src="/img/social/github.min.svg" alt="GitHub"></a>
                             </li>
-                            <li><a href="https://discordapp.com/invite/VB3drhA"><img src="/img/social/discord.min.svg" alt="Discord"></a>
+                            <li><a href="https://discord.gg/mPZNm7A"><img src="/img/social/discord.min.svg" alt="Discord"></a>
                             </li>
                         </ul>
                     </div>
@@ -163,5 +168,14 @@
 @include('partials.algolia_template')
 
 <script src="{{ mix('js/app.js') }}"></script>
+
+<script>
+    var _gaq=[['_setAccount','UA-23865777-1'],['_trackPageview']];
+    (function(d,t){
+        var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+        g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+        s.parentNode.insertBefore(g,s)
+    }(document,'script'));
+</script>
 </body>
 </html>

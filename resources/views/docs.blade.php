@@ -16,12 +16,15 @@
                                 {!! $index !!}
                             </div>
 
-                            <div id="carbonads"><span><span class="carbon-wrap"><a href="//srv.carbonads.net/ads/click/x/GTND42QWFTSDE2QUCA74YKQMCEADKKJWCWSDEZ3JCWBDE2Q7CVYI523KC6BIV53UCTAI6K3EHJNCLSIZ?segment=placement:laravelcom;" class="carbon-img" target="_blank" rel="noopener"><img src="https://cdn4.buysellads.net/uu/1/41312/1547165213-HS1.png" alt="" border="0" height="100" width="130" style="max-width: 130px;"></a><a href="//srv.carbonads.net/ads/click/x/GTND42QWFTSDE2QUCA74YKQMCEADKKJWCWSDEZ3JCWBDE2Q7CVYI523KC6BIV53UCTAI6K3EHJNCLSIZ?segment=placement:laravelcom;" class="carbon-text" target="_blank" rel="noopener">HelloSign: The Simple, Secure, Send in Seconds eSignature. Try it free today.</a></span><a href="http://carbonads.net/?utm_source=laravelcom&amp;utm_medium=ad_via_link&amp;utm_campaign=in_unit&amp;utm_term=carbon" class="carbon-poweredby" target="_blank" rel="noopener">ads via Carbon</a></span></div>
+                            <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CKYILK3E&placement=laravelcom" id="_carbonads_js"></script>
+
 
                         </div>
                     </nav>
                     <div class="trigger_contain">
-                        <a href="#" class="nav_trigger"><div class="bar"></div></a>
+                        <a href="#" class="nav_trigger" aria-label="Menu">
+                            <div class="bar"></div>
+                        </a>
                     </div>
                 </aside>
 
@@ -31,9 +34,9 @@
                             <div class="input_group">
                                 <label>Version</label>
                                 <div class="custom_select">
-                                    <select id="version_switcher">
+                                    <select id="version_switcher" aria-label="Laravel version">
                                         @foreach ($versions as $key => $display)
-                                            <option {{$currentVersion == $key ? 'selected="yes"' : ''}}" value="{{ url('docs/'.$key.$currentSection) }}">{{ $display }}</option>
+                                            <option {{ $currentVersion == $key ? 'selected' : '' }} value="{{ url('docs/'.$key.$currentSection) }}">{{ $display }}</option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -41,7 +44,7 @@
                         </div>
                         <div class="search_contain">
                             <div class="input_group search icon">
-                                <input type="text" class="search_input" id="search-docs-input" placeholder="Search Docs">
+                                <input type="text" class="search_input" id="search-docs-input" placeholder="Search Docs" aria-label="Search in the documentation">
                                 <input type="submit" class="search_submit icon_display">
                             </div>
                         </div>
